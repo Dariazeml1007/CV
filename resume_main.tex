@@ -1,0 +1,255 @@
+% !TeX program = xelatex
+\documentclass{my_cv}
+\title{Резюме}
+\author{Земляная Дарья}
+\date{Июнь 2024}
+\usepackage[a4paper, left=2em, right=2em, top=2.5em, bottom=0em]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{0cm}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage[none]{hyphenat}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{textcomp}
+% Цветовая схема
+\definecolor{pinkAccent}{HTML}{D63E82}
+\definecolor{blueAccent}{HTML}{005F89}
+\definecolor{textColor}{HTML}{333333}
+\definecolor{blueAcc}{HTML}{459DBF}
+\defaultfontfeatures{LetterSpace=1.5}
+
+\hypersetup{
+unicode=true,
+colorlinks=true,
+linkcolor=blueAccent,
+urlcolor=blueAccent,
+}
+
+\setmainfont{Arial}[
+BoldFont={Arial Bold},
+ItalicFont={Arial Italic}
+]
+
+% Стили для элементов
+\newcommand{\cvSection}[1]{
+\vspace{1em}
+\noindent\color{pinkAccent}\large\textbf{#1}
+\vspace{0.5em}\hrule
+\vspace{0.5em}
+}
+
+\newcommand{\badge}[2]{%
+    \colorbox{#1}{\textbf{\ #2\ }}% пробелы по краям для красоты
+}
+}
+
+\newcommand{\positionAndCompanyLine}[4]{
+\vspace{-0.5em}
+\noindent\textbf{#1} \
+\noindent #2 \hfill #3 - #4 \
+\vspace{0.25em}
+}
+
+\begin{document}
+
+\begin{multicols}{3}
+    \headerSection{\badge{pinkAccent}{Системный программист}}
+    \columnbreak
+    \headerSection{\xhrulefill{pinkAccent}{0.6em}}
+    \columnbreak
+    \headerSection{\xhrulefill{blueAccent}{0.6em}}
+\end{multicols}
+\begin{multicols}{2}
+% Левая колонка (70% ширины)
+\begin{minipage}[t]{1\linewidth}
+\vspace{-2em}
+\headerSection{\Huge \textbf{\textcolor{textColor}{Земляная Дарья}}}
+\cvParagraph{%
+\href{tel:+79091559499}{+7(909) 155 94 99}\
+
+\href{mailto:darijazeml@inbox.ru}{darijazeml@inbox.ru}\
+
+\href{https://github.com/Dariazeml1007}{github.com/Dariazeml1007}
+}
+
+   \vspace{0.5em}
+\noindent
+\begin{minipage}[t]{0.65\linewidth}
+    \textbf{{Основные навыки:}}\\[\smallskipamount]
+    \textcolor{textColor}{C \textbullet\ C++ \textbullet\ x86/x64 ASM \textbullet\ Python \textbullet\ Ruby}\\[\medskipamount]
+    \textbf{{Инструменты:}}\\[\smallskipamount]
+    \textcolor{textColor}{Git \textbullet\ CMake \textbullet\ GDB \textbullet\ Valgrind \textbullet\ Linux}\\[\medskipamount]
+    \textbf{{Языки:}}\\[\smallskipamount]
+    \textcolor{textColor}{Русский (родной) \textbullet\ Английский (B1)}
+\end{minipage}
+\end{minipage}
+\hfill
+% Правая колонка (30% ширины) с креативной рамкой
+\begin{minipage}[t]{0.8\linewidth}
+    \vspace{-1.5em}
+    \begin{flushright}
+        \begin{tikzpicture}
+            % Стильная рамка с акцентами из шапки
+            \node[draw=pinkAccent, line width=1.8pt, 
+                  double=blueAccent, double distance=1.2pt,
+                  rounded corners=4pt, 
+                  inner sep=0pt] (frame) {
+                \includegraphics[width=4.8cm,height=6.5cm,keepaspectratio]{photo.jpg}
+            };
+            
+          
+        \end{tikzpicture}
+    \end{flushright}
+\end{minipage}
+\end{multicols}
+% Перед multicols (убираем разделитель):
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{2em}
+
+
+
+\cvSection{\badge{blueAcc}{Образование}}
+\begin{adjustwidth}{2em}{0em}
+
+\positionAndCompanyLine{Московский Физико-Технический Институт}{Москва, Россия}{2024 - Настоящее время}
+\begin{itemize}
+\item Факультет радиотехники и кибернетики (ФРКТ)
+\item Прикладная математика и физика
+\end{itemize}
+\positionAndCompanyLine{Лицей "Вторая школа"}{Москва, Россия}{2021 - 2024}
+\begin{itemize}
+\item Мат - инфо профиль
+\item Призер олимпиад по математике и физике
+\end{itemize}
+\end{adjustwidth}
+
+\cvSection{\badge{pinkAccent}{Спецкурсы}}
+\begin{adjustwidth}{2em}{0em}
+\begin{multicols}{2}
+  \begin{itemize}
+    \item \textbf{Компиляторные технологии и промышленное программирование на C} (Дединский И.Р)
+    \item \textbf{Введение в промышленное программирование на C++} (Владимиров К.И)
+    \item \textbf{Введение в архитектуру вычислительных систем} (Sber)
+    \item \textbf{Введение в тензорные компиляторы} (Sber)
+    \item \textbf{Тестовые генераторы}
+  \end{itemize}
+\end{multicols}
+\end{adjustwidth}
+
+\cvSection{\badge{blueAcc}{Опыт работы}}
+\begin{adjustwidth}{2em}{0em}
+\positionAndCompanyLine{Стажер по анализу данных}{МТС Digital}{06/2024 - 08/2024}
+\begin{flushleft}\textbf{\textit{Стажировка по Big Data}} \end{flushleft}
+\begin{itemize}
+\item Получила практический опыт работы с PySpark для обработки больших данных
+\item Работала с системой контроля версий Git в среде GitLab
+\item Участвовала в подготовке и анализе данных для проектов AI/ML
+\item Развила понимание практического применения моделей AI в бизнесе
+\item Участвовала в командных встречах и обсуждениях проектов
+\end{itemize}
+\techStackList{PySpark, Git/GitLab, Python, Big Data concepts}
+\end{adjustwidth}
+
+\vspace{0.5em}
+
+\cvSection{\badge{pinkAccent}{Ключевые учебные проекты @ Huawei/МФТИ 1 курс}}
+\begin{adjustwidth}{2em}{0em}
+\textcolor{blueAccent}{\emph{Под руководством Ильи Рудольфовича Дединского | Выполнено 10+ проектов по системному программированию}}
+
+\positionAndCompanyLine{Эмулятор процессора}{Системное программирование}{2024}
+\begin{itemize}
+\item \textbf{Реализация на чистом C}: Ассемблерный компилятор + стековая ВМ
+\item \textbf{18 инструкций}:
+\begin{itemize}
+\item Арифметика: ADD/SUB/MUL/DIV
+\item Операции со стеком: PUSH/POP
+\item Управление потоком: JMP/CALL/RET
+\end{itemize}
+\item Особенности: поддержка меток, примеры рекурсии (факториал)
+\item \href{https://github.com/Dariazeml1007/Processor}{[Ссылка на github]}
+\end{itemize}
+\techStackList{C, Синтаксис ассемблера}
+\end{adjustwidth}
+\positionAndCompanyLine{Низкоуровневая реализация printf}{Интеграция ассемблера и C}{2025}
+\begin{itemize}
+\item \textbf{Интерфейс C-ASM} через extern вызовы
+\item \textbf{Поддержка форматов: \%d \%s \%c \percent + числовые (\%b/\%o/\%x)}
+\item Унифицированная обработка чисел для форматов с основанием
+\item \href{https://github.com/Dariazeml1007/MyAsmPrintf}{[Ссылка на github]}
+\end{itemize}
+\techStackList{Nasm, System V ABI}
+
+\positionAndCompanyLine{Оптимизатор множества Мандельброта}{SIMD программирование}{2025}
+\begin{itemize}
+\item \textbf{3 реализации}:
+\begin{itemize}
+\item Базовый скалярный вариант
+\item Автовекторизованный (-O3)
+\item Ручные AVX2 инструкции (m256)
+
+\end{itemize}
+\item Интерактивная визуализация с TxLib
+\item \href{https://github.com/Dariazeml1007/Mandelbrot}{ [Ссылка на github]}
+\end{itemize}
+\techStackList{C, AVX2 Intrinsics, TxLib}
+
+\positionAndCompanyLine{Оптимизация хэш-таблицы для строк}{C, AVX2, ASM, Valgrind}{2025}
+\begin{itemize}
+    \item \textbf{Методичная оптимизация}: hash() → strcmp() → search() через CRC32/AVX2 интринсики
+    \item \textbf{Профилирование}: Callgrind для анализа тактов, clock\_gettime для end-to-end замеров
+    \item \textbf{Результат}: \textbf{1.76× ускорение} поиска при 8 asm-инструкциях; коэффициент улучшения = 220
+    \item \textbf{Инсайт}: интринсики + компиляторные оптимизации (-O3) эффективнее ручного asm в контексте
+    \item \href{https://github.com/Dariazeml1007/Hash_table}{[Ссылка на github]}
+\end{itemize}
+\techStackList{C, x86-64 ASM, AVX2 Intrinsics, Valgrind/Callgrind, System V ABI}
+
+\cvSection{\badge{blueAcc} {Введение в промышленное программирование на С++"}}
+\textcolor{blueAccent}{\emph{Под руководством Владимирова Константина Игоревича }}
+\begin{adjustwidth}{2em}{0em}
+
+% === 2Q Cache Simulator ===
+\positionAndCompanyLine{2Q Cache Simulator}{C++17, STL}{2025}
+\begin{itemize}
+    \item \textbf{Алгоритм}: реализация Two-Queue с  доступом через std::unordered\_map
+    \item \textbf{Метаданные}: список A\_out для отслеживания «вытесненных» элементов, точность ~90\% от ideal cache
+    \item \href{https://github.com/Dariazeml1007/Cache_2Q_simulation}{[Ссылка на github]}
+\end{itemize}
+\techStackList{C++17, STL, CMake}
+
+% === BST Range Query ===
+\positionAndCompanyLine{BST с range queries}{C++17, Алгоритмы}{2025}
+\begin{itemize}
+    \item \textbf{Функционал}: вставка ключей, подсчёт элементов в диапазоне $[L; R)$, dump в Graphviz
+    \item \textbf{Оптимизация}: балансировка + кэширование метаданных для ускорения range-запросов
+    \item \href{https://github.com/Dariazeml1007/BST-Range-Query}{[Ссылка на github]}
+\end{itemize}
+\techStackList{C++17, AVL Trees, CMake, Benchmarking, GoogleTest}
+
+% === ParaCL Interpreter ===
+\positionAndCompanyLine{Язык ParaCL}{C++17, Flex/Bison}{2026}
+\begin{itemize}
+    \item \textbf{Toolchain}: лексический анализ (Flex) → парсинг (Bison) → AST → интерпретация
+    \item \textbf{Архитектура}: RAII для управления памятью AST, scoped variables, arithmetic evaluation
+    \item \textbf{Качество}: модульные тесты на GoogleTest, CMake-сборка под Linux/WSL
+    \item \href{https://github.com/Dariazeml1007/ParaCL}{[Ссылка на github]}
+\end{itemize}
+\techStackList{C++17, Flex, Bison, AST, GoogleTest}
+
+\cvSection{\badge{pinkAccent}{Проект по курсу "Средства симмуляции"}}
+% === CPU Emulator + Ruby Assembler ===
+\positionAndCompanyLine{Эмулятор CPU с DSL-ассемблером}{C++, Ruby}{2025}
+\begin{itemize}
+    \item \textbf{ISA}: 14 инструкций, mixed encoding (RISC-style + custom), поддержка прерываний
+    \item \textbf{Toolchain}: Ruby-based micro-assembler → бинарный образ → эмуляция в C++
+    \item \textbf{Дизайн}: разделение frontend (DSL) и backend (emulator) для тестируемости
+    \item \href{https://github.com/Dariazeml1007/CPU-interpreter}{[Ссылка на github]}
+\end{itemize}
+\techStackList{C++17, Ruby, DSL, Emulation, Custom ISA}
+
+\end{adjustwidth}
+\end{document}
